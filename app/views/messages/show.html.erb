@@ -1,0 +1,7 @@
+<h1>id = <%= @messages.id %> のメッセージ詳細ページ</h1>
+
+<p><%= @messages.content %></p>
+
+<%= link_to '一覧に戻る',messages_path %>
+<%= link_to 'このメッセージを編集する',edit_message_path(@messages) %>
+<%= link_to 'このメッセージを削除する', @message, method: :delete, data: { confirm: '本当に削除しますか'} %>

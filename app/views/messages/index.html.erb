@@ -2,10 +2,7 @@
 <ul>
   <% @messages.each do |messages| %>
   
-  <li>
-    <%= link_to messages.id,messages %> : <%= messages.content%>
-  </li>
-  
+<li><%= link_to messages.id,messages %> : <%= message.title%> > <%= messages.content%></li>
   <% end %>
 </ul>
 

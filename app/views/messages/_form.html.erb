@@ -1,21 +1,23 @@
-<%= form_for(message) do |f| %>
+<%= form_for(task) do |f| %>
 
-<% if message.errors.any? %>
 
-<div id="error_explanation">
+  <% if message.errors.any? %>
 
-  <ul><% message.errors.full_messages.each do |message| %>
+  <div id="error_explanation">
+    
+  <ul>
   <li><%= message %></li>
-        <% end %>
+  <% end %>
   </ul>
-</div>
-<% end %>
+  </div>
+  <% end %>
+        
+<% task.errors.full_tasks.each do |task| %>
+  <%= f.label :content, 'メッセージ' %>
+  <%= f.text_field :content %>
+  
+  <%= f.label :status, 'ステータス' %>
+  <%= f.text_field :status %>
 
-<%= f.label :title, 'タイトル' %>
-<%= f.text_field :title %>
-
-<%= f.label :content, 'メッセージ' %>
-<%= f.text_field :content %>
-
-<%= f.submit '投稿' %>
+  <%= f.submit '投稿' %>
 <% end %>
